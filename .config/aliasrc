@@ -19,7 +19,8 @@ alias \
 	ls="ls -hN --color=auto --group-directories-first" \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
-	ccat="highlight --out-format=ansi"
+	ccat="highlight --out-format=ansi" \
+	nmap="grc nmap"
 
 # These common commands are just too long! Abbreviate them.
 alias \
@@ -34,7 +35,12 @@ alias \
 	p="sudo pacman" \
 	xi="sudo xbps-install" \
 	xr="sudo xbps-remove -R" \
-	xq="xbps-query"
+	xq="xbps-query" \
+	bt="bluetoothctl" \
+	wifi="sudo wpa_supplicant -iwlp1s0 -c /etc/wpa_supplicant/wpa_supplicant.conf -B" \
+	dhcp="sudo dhcpcd wlp1s0" \
+	pvpn="sudo protonvpn" \
+	pdflatex="pdflatex -shell-escape -interactions=nonstopmode"
 
 # This alias is important. It enables the `pauseallmpv` command.
 alias mpv="mpv --input-ipc-server=/tmp/mpvsoc$(date +%s)"
