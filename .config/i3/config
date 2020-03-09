@@ -8,9 +8,9 @@
 # export TERMINAL="st"
 
 # #---Basic Definitions---# #
-for_window [class="^.*"] border pixel 2
-gaps inner 15
-gaps outer 15
+for_window [class="^.*"] border pixel 3
+gaps inner 14
+gaps outer 14
 set $term --no-startup-id $TERMINAL
 set $mod Mod4
 
@@ -50,16 +50,19 @@ bindsym $mod+Shift+Delete	exec --no-startup-id lmc truemute ; exec --no-startup-
 bindsym $mod+q			[con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 bindsym $mod+Shift+q		[con_id="__focused__" instance="^(?!dropdown_).*$"] exec --no-startup-id kill -9 `xdotool getwindowfocus getwindowpid`
 
+# bindsym $mod+w			exec --no-startup-id $term -e pvpn d && pvpn c -f ; exec --no-startup-id notify-send "Connected to vpn"
+
 bindsym $mod+Shift+r		exec --no-startup-id winresize
 
 bindsym $mod+t			split toggle
 bindsym $mod+Shift+t		gaps inner current set 15; gaps outer current set 15
 
-bindsym $mod+Shift+y		exec --no-startup-id i3resize left
+bindsym $mod+Shift+z		exec --no-startup-id i3resize left
 
 bindsym $mod+u			exec --no-startup-id ddspawn tmuxdd
 bindsym $mod+Shift+u		exec --no-startup-id i3resize down
 
+bindsym $mod+i			exec --no-startup-id $term -e htop
 bindsym $mod+Shift+i		exec --no-startup-id i3resize up
 
 bindsym $mod+o			sticky toggle
@@ -97,8 +100,8 @@ bindsym $mod+l			focus right
 bindsym $mod+Shift+l		move right 30
 bindsym $mod+Ctrl+l		move workspace to output right
 
-bindsym $mod+z			gaps outer current plus 5
-bindsym $mod+Shift+z		gaps outer current minus 5
+bindsym $mod+y			gaps outer current plus 5
+bindsym $mod+Shift+y		gaps outer current minus 5
 
 bindsym $mod+c			exec --no-startup-id cabl
 
